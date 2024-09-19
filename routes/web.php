@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Ownercontroller;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\StudentController;
 
@@ -23,3 +24,4 @@ Route::get('/contact', [ContactController::class, 'show']);
 
 //One to many relation routes
 Route::get('/test', [QuestionController::class, 'showdata']);
+Route::get('/roles',[Ownercontroller::class, 'index']);
