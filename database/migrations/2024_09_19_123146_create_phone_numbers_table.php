@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('phone_numbers', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('mobile number');
+            $table->foreignId('company_id')
+            ->references('id')
+            ->on('companies')
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -32,6 +32,12 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+
+    public function phoneNumber()
+    {
+        return $this->hasOneThrough(phone_number::class,Company::class,'user_id','company_id');
+    }
+
     /**
      * Get the attributes that should be cast.
      *
